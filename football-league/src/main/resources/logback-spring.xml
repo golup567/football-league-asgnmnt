@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+		<appender name="JSON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+			<file>logs/app.log</file>
+			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+				<fileNamePattern>logs/app.log.%d{yyyy-MM-dd}</fileNamePattern>
+				<maxHistory>30</maxHistory>	
+			</rollingPolicy>
+			<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+		</appender>
+<logger name="com.sports" level="INFO" />
+<root level="ERROR">
+	<appender-ref ref="JSON"></appender-ref>
+</root>		
+</configuration>
